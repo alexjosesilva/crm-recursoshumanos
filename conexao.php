@@ -2,11 +2,11 @@
 
 //acesso ao banco de dados   
 $enderecobd = "localhost";   
-$dbname = "dbteste";       
+$dbname = "localdb";       
                              
 //dados do banco             
-$usuariobd = "root";         
-$senhabd = "";         
+$usuariobd = "azure";         
+$senhabd = "6#vWHD_$";         
 
 //conectar ao banco                                                                                   
 $con   = mysql_connect($enderecobd,$usuariobd,$senhabd) or die ("Erro na conexão do Banco de Dados!");
