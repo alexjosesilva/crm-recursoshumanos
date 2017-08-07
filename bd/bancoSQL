@@ -1,0 +1,84 @@
+-- phpMyAdmin SQL Dump
+-- version 3.2.0.1
+-- http://www.phpmyadmin.net
+--
+-- Servidor: localhost
+-- Tempo de Geração: Ago 03, 2017 as 05:54 
+-- Versão do Servidor: 5.1.37
+-- Versão do PHP: 5.3.0
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- Banco de Dados: `dbteste`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tfuncionario`
+--
+
+CREATE TABLE IF NOT EXISTS `tfuncionario` (
+  `idtFuncionario` int(11) NOT NULL AUTO_INCREMENT,
+  `codigoFuncionario` varchar(45) DEFAULT NULL,
+  `nomeFuncionario` varchar(45) DEFAULT NULL,
+  `salario` varchar(45) DEFAULT NULL,
+  `dataNascimento` varchar(45) DEFAULT NULL,
+  `funcao` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idtFuncionario`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COMMENT='tabela de funcionaro' AUTO_INCREMENT=6 ;
+
+--
+-- Extraindo dados da tabela `tfuncionario`
+--
+
+INSERT INTO `tfuncionario` (`idtFuncionario`, `codigoFuncionario`, `nomeFuncionario`, `salario`, `dataNascimento`, `funcao`) VALUES
+(1, '1', 'adm', NULL, NULL, 1),
+(3, '123', 'alex', '1231241', '12341243', 1),
+(4, '6', 'reter', '56456', '554336', 2),
+(5, '34', 'sdffsdfsd', '534533', '3434', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tfuncoes`
+--
+
+CREATE TABLE IF NOT EXISTS `tfuncoes` (
+  `idtFuncoes` int(11) NOT NULL AUTO_INCREMENT,
+  `codigoFuncao` int(11) DEFAULT NULL,
+  `descricaoFuncao` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idtFuncoes`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COMMENT='tabela de funcoes' AUTO_INCREMENT=11 ;
+
+--
+-- Extraindo dados da tabela `tfuncoes`
+--
+
+INSERT INTO `tfuncoes` (`idtFuncoes`, `codigoFuncao`, `descricaoFuncao`) VALUES
+(1, 1, 'Programador Junior'),
+(2, 2, 'Analista Pleno'),
+(3, 3, 'Gerente de Projetos Master'),
+(10, 6, 'Seguranca');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tusuario`
+--
+
+CREATE TABLE IF NOT EXISTS `tusuario` (
+  `idtUsuario` int(11) NOT NULL AUTO_INCREMENT,
+  `codigoUsuario` varchar(45) NOT NULL,
+  `nomeUsuario` varchar(45) NOT NULL,
+  `senhaUsuario` varchar(45) NOT NULL,
+  PRIMARY KEY (`idtUsuario`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COMMENT='tabela de usuario' AUTO_INCREMENT=9 ;
+
+--
+-- Extraindo dados da tabela `tusuario`
+--
+
+INSERT INTO `tusuario` (`idtUsuario`, `codigoUsuario`, `nomeUsuario`, `senhaUsuario`) VALUES
+(1, '1', 'adm', '123');

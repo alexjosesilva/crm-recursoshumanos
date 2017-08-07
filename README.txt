@@ -1,4 +1,4 @@
-# SistemaRH em PHP
+﻿# SistemaRH em PHP
 Sistema em PHP para gerenciar recursos humanos de uma empresa ficticia
 
 *************************************************************************************************
