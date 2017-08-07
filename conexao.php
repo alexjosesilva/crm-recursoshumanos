@@ -1,7 +1,7 @@
 <?php
 
 //acesso ao banco de dados   
-$enderecobd = "localhost";   
+$enderecobd = "http://127.0.0.1:49577";   
 $dbname = "localdb";       
                              
 //dados do banco             
