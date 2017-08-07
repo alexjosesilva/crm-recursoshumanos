@@ -12,7 +12,7 @@
 	
 
 	//query
-	$query = "INSERT INTO `dbteste`.`tfuncionario`(`codigoFuncionario`,`nomeFuncionario`,`salario`,`dataNascimento`,`funcao`)
+	$query = "INSERT INTO `localdb`.`tfuncionario`(`codigoFuncionario`,`nomeFuncionario`,`salario`,`dataNascimento`,`funcao`)
 VALUES (".$codigoFuncionario.",'".$nomeFuncionario."','".$salario."','".$dataNascimento."','".$funcao."')";
 	
 	$resultado = mysql_query($query,$con) or die ("erro em inserir no banco!".mysql_error());

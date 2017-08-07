@@ -7,7 +7,7 @@
 	$codigoFuncao			=	$_REQUEST['codigoFuncao'];
 	
 	//query
-	$query = "INSERT INTO `dbteste`.`tfuncoes`(`codigoFuncao`,`descricaoFuncao`)
+	$query = "INSERT INTO `localdb`.`tfuncoes`(`codigoFuncao`,`descricaoFuncao`)
 VALUES ('".$codigoFuncao."','".$descricaoFuncao."')";
 	
 		

@@ -9,7 +9,7 @@
 	
 
 	//query
-	$query = "INSERT INTO `dbteste`.`tusuario`(`codigoUsuario`,`nomeUsuario`,`senhaUsuario`)
+	$query = "INSERT INTO `localdb`.`tusuario`(`codigoUsuario`,`nomeUsuario`,`senhaUsuario`)
 VALUES (".$codigoUsuario.",'".$nomeUsuario."','".$senhaUsuario."')";
 
 	$resultado = mysql_query($query,$con) or die ("erro em inserir no banco!");
