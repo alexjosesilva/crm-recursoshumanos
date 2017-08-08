@@ -7,7 +7,7 @@ include 'conexao.php';
 
 //Variavel de destino para o formulario
 $destino = "inserir_usuario.php";
-$tituloformulario = "Incluir Cliente";
+$tituloformulario = "Incluir Usuario";
 
 //Caso o usuário não esteja autenticado, limpa os dados e redireciona
 if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) {
