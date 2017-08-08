@@ -125,7 +125,7 @@ if(!empty($_GET['codigoAltFuncao'])){
 							<div class="control-group">
 							  <label class="control-label" for="sinopse">Codigo da Função</label>
 							  <div class="controls">
-							    <textarea id="codigoFuncao" name="codigoFuncao" value="<?php echo isset($funcao)?$funcao['codigoFuncao']:""; ?>"></textarea>
+							    <input id="codigoFuncao" name="codigoFuncao" value="<?php echo isset($funcao)?$funcao['codigoFuncao']:""; ?>" />
 							  </div>
 							</div>
 
