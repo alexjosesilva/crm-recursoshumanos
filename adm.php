@@ -24,8 +24,8 @@ if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) 
 
 
   //se recebemos uma variavel pelo metodo Get, faça o seguinte
-  if(empty($_GET['codigoAltusuario'])){
-  	$codigo = $_GET['codigoAltusuario'];
+  if(empty($_GET['codigoAltUsuario'])){
+  	$codigo = $_GET['codigoAltUsuario'];
 
   	//exibindo os dados do banco....
   	$query   = "select * from tusuario where codigoUsuario=".$codigo;
@@ -40,7 +40,7 @@ if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) 
 
   	//ocultar o campo
   	$oculto = '<input type="hidden" name="codigo" value="'.$codigo.'"/>';
-  
+    exit();
   }
 
 
