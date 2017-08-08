@@ -2,10 +2,12 @@
 //inicia sessão
 session_start();
 
+//acesso ao banco e tabelas do sistema
+include 'conexao.php';
 
-	//Variavel de destino para o formulario
-	$destino = "inserir_usuario.php";
-	$tituloformulario = "Incluir Cliente";
+//Variavel de destino para o formulario
+$destino = "inserir_usuario.php";
+$tituloformulario = "Incluir Cliente";
 
 //Caso o usuário não esteja autenticado, limpa os dados e redireciona
 if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) {
@@ -19,15 +21,19 @@ if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) 
     //Redireciona para a página de autenticação
     header('location:index.php');
 }
-	//acesso ao banco e tabelas do sistema
-	include 'conexao.php';
+
 
   //se recebemos uma variavel pelo metodo Get, faça o seguinte
   if(!isset($_GET['codigoAltusuario'])){
   	$codigo = $_GET['codigoAltusuario'];
 
-  	
 
+    //Obter o filme
+
+  	//exibindo os dados do banco....
+  	$query   = "select * from tusuario where=".$codigo;
+  	$dados   = mysql_query($query);
+  	$usuario = mysql_fetch_assoc($dados));
 
   	//alterar Destino
   	$destino = "alterar_usuario.php";
