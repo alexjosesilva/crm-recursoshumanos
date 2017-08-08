@@ -31,8 +31,8 @@ if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) 
   	//exibindo os dados do banco....
   	$query   = "select * from tusuario where codigoUsuario=".$codigo;
   	$dados   = mysql_query($query);
-  	//$usuario = mysql_affected_rows($dados));
-    var_dump($dados);
+  	$usuario = mysql_affected_rows($dados);
+    //var_dump($dados);
 
 
   	//alterar Destino
