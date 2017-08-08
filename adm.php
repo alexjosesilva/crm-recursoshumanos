@@ -109,7 +109,7 @@ if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) 
                             <div class="control-group">
                               <label class="control-label" for="nomeUsuario">Matricula Usuario</label>
                               <div class="controls">
-                                <input id="codigoUsuario" name="codigoUsuario" type="text" placeholder=" Nome Usuario" autocomplete="off" />
+                                <input id="codigoUsuario" name="codigoUsuario" type="text" value="<?php echo isset($usuario)?$usuario['codigoUsuario']:""; ?>" autocomplete="off" />
 
                               </div>
                             </div>
@@ -118,7 +118,7 @@ if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) 
 							<div class="control-group">
 							  <label class="control-label" for="nomeUsuario">Nome Usuario</label>
 							  <div class="controls">
-							    <input id="nomeUsuario" name="nomeUsuario" type="text" value="<?php echo isset($usuario)?$usuario['nomeUsuario']:""; ?>"  placeholder="" autocomplete="off" />
+							    <input id="nomeUsuario" name="nomeUsuario" type="text" value="<?php echo isset($usuario)?$usuario['nomeUsuario']:""; ?>"  autocomplete="off" />
 
 							  </div>
 							</div>
@@ -128,7 +128,7 @@ if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) 
 							<div class="control-group">
 							  <label class="control-label" for="senhaUsuario">Senha Usuario</label>
 							  <div class="controls">
-							    <input id="senhaUsuario" name="senhaUsuario" type="password" placeholder="senha do Usuario" class="input-xxlarge" autocomplete="off">
+							    <input id="senhaUsuario" name="senhaUsuario" type="password" value="<?php echo isset($usuario)?$usuario['senhaUsuario']:""; ?>" class="input-xxlarge" autocomplete="off">
 
 							  </div>
 							</div>
