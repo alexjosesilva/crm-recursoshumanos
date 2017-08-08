@@ -40,7 +40,7 @@ if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) 
 
   	//ocultar o campo
   	$oculto = '<input type="hidden" name="codigo" value="'.$codigo.'"/>';
-    exit();
+  
   }
 
 
