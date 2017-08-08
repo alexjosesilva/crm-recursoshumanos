@@ -1,6 +1,6 @@
 <?php
 
-	$codigoUsuario = 123;
+	$codigoUsuario = $_GET['codigo'];
 
 	if(!empty($codigoUsuario)){
 		echo $codigoUsuario;
