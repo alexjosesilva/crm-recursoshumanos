@@ -10,7 +10,9 @@
 	$codigoUsuario	 	=	$_REQUEST['codigoUsuario'];
 	$senhaUsuairo	 		=	$_REQUEST['senhaUsuario'];
 
-  echo "Teste: ".$codigoUsuario;
+  echo "Teste: ".$nomeUsuario."<br>";
+	echo "Teste: ".$codigoUsuario."<br>";
+	echo "Teste: ".$senhaUsuario."<br>";
 
 	//query para atualizar o dado
 	$query = "UPDATE `bdteste`.`tusuario` SET nomeUsuario=".$nomeUsuario."', codigoUsuario='".$codigoUsuario."',senhaUsuario='".$senhaUsuario."' where codigoUsuario=".$codigoUsuario;
