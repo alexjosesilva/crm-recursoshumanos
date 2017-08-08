@@ -7,7 +7,7 @@ Sistema em PHP para gerenciar recursos humanos de uma empresa ficticia
 
 Introdução
 
-	Sistema para gerenciamento de funcionarios da empresa 3LM. É possível inserir, alterar, excluir 
+	Sistema para gerenciamento de funcionarios da empresa 3LM. É possível inserir, alterar, excluir
 	funcionarios. Também é possivel inserir, alterar, excluir funcoes
 
 *************************************************************************************************
@@ -20,23 +20,26 @@ Dados para Acesso ao sistema:
 3. Inserir Funcao e listar ok
 4. Inserir Funcionario e listar ok
 5. Só pode ter acesso ao sistema: Funcionarios ok
-6. Excluir <0k>
-	6.1 Usuario
-	6.2 Funcionario
-	6.3 Função
+6. Excluir:Usuario,Funcionario, Função: OK
 
 
 **************************************************************************************************
 Partes a ser desenvolvido:
 
-1. Alterar(modal)
-	1.1 Usuario
-	1.2 Funcionario
-	1.3 Filme
-	
-2. Validar Campos com javascript
-	1.Campos numericos:telefone, cpf,email e telefone
-	
-3. Gerar Relatorios
-	1.Em pdf
+<span>Alterar(modal)</span>
+<ol>
+  <li>Usuario</li>
+  <li>Funcionario</li>
+  <li>Filme</li>
+</ol>
+
+<span>Validar Campos com javascript </span>
+<ol>
+  <li>telefone, cpf,email e telefone</li>
+</ol>
+
+<span> Gerar Relatorios</span>
+	<ol>
+		<li>Em pdf</li>
+	</ol>
 **************************************************************************************************
