@@ -15,7 +15,7 @@
 	echo "senhaUsuario:  ".$senhaUsuario."<br>";
 
 	//query para atualizar o dado
-	$query = "UPDATE localdb.tusuario SET nomeUsuario='".$nomeUsuario."', codigoUsuario='".$codigoUsuario."', senhaUsuario='".$senhaUsuario."' where codigoUsuario='".$codigoUsuario."'";
+	$query = "UPDATE 'localdb'.'tusuario' SET nomeUsuario='".$nomeUsuario."', codigoUsuario='".$codigoUsuario."', senhaUsuario='".$senhaUsuario."' where codigoUsuario='".$codigoUsuario."'";
 	$resultado = mysql_query($query,$con) or die ("2-erro em ATUALIZAR o banco!");
 
 	header('Location:adm.php');
