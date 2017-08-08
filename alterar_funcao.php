@@ -11,7 +11,10 @@
 
 
 	//query para atualizar o dado
-	$query = "UPDATE tfuncoes SET descricaoFuncao='".$descricaoFuncao."', codigoFuncao='".$codigoFuncao."' where codigoFuncao='".$codigoFuncao."'";
+	$query = "UPDATE tfuncoes SET
+	descricaoFuncao='".$descricaoFuncao."', 
+	codigoFuncao='".$codigoFuncao."'
+	where codigoFuncao='".$codigoFuncao."'";
 
 	$resultado = mysql_query($query,$con) or die ("erro em ATUALIZAR o banco!");
 	header('Location:funcao.php');

@@ -15,7 +15,7 @@
 	 echo "<br>".$nomeFuncionario;
 
 	//query para atualizar o dado
-	$query = "UPDATE tfuncionario SET 
+	$query = "UPDATE tfuncionario SET
 		codigoFuncionario='".$codigoFuncionario."',
 		nomeFuncionario='".$nomeFuncionario."',
 		salario='".$salario."',
@@ -24,7 +24,7 @@
 		where
 		codigoFuncionario='".$codigoFuncionario."'";
 
-	$resultado = mysql_query($query,$con) or die ("erro em ATUALIZAR o banco!");
+	$resultado = mysql_query($query,$con) or die ("3-erro em ATUALIZAR o banco!");
 
 	var_dump ($resultado);
 
