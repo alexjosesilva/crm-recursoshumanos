@@ -8,7 +8,7 @@
 
 	$nomeUsuario 	 		=	$_REQUEST['nomeUsuario'];
 	$codigoUsuario	 	=	$_REQUEST['codigoUsuario'];
-	$senhaUsuairo	 		=	$_REQUEST['senhaUsuario'];
+	$senhaUsuario	 		=	$_REQUEST['senhaUsuario'];
 
   echo "nomeUsuario: ".$nomeUsuario."<br>";
 	echo "codigoUsuario: ".$codigoUsuario."<br>";
