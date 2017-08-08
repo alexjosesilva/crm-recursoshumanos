@@ -14,8 +14,8 @@
    echo "<br>".$codigoFuncionario;
 	 echo "<br>".$nomeFuncionario;
 	 echo "<br>".$salario;
-	 echo "<br>".$nomeFuncionario;
-	 echo "<br>".$nomeFuncionario;
+	 echo "<br>".$dataNascimento;
+	 echo "<br>".$funcao;
 
 	//query para atualizar o dado
 	$query = "UPDATE tfuncionario SET
