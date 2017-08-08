@@ -11,10 +11,15 @@
 			$dataNascimento				 =	$_REQUEST['dataNascimento'];
 			$funcao								 =	$_REQUEST['funcao'];
 
+   echo $codigoFuncionario;
+
 	//query para atualizar o dado
 	$query = "UPDATE tfuncionario SET nomeFuncionario='".$nomeFuncionario."', codigoFuncionario='".$codigoFuncionario."',salario='".$salario."',dataNascimento='".$dataNascimento."',funcao='".$funcao."' where codigoFuncionario='".$codigoFuncionario."'";
-
 	$resultado = mysql_query($query,$con) or die ("erro em ATUALIZAR o banco!");
+
+	var_dump ($resultado);
+
+
 	header('Location:funcionario.php');
 
     }
