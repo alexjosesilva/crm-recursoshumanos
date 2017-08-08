@@ -13,6 +13,9 @@
 
    echo "<br>".$codigoFuncionario;
 	 echo "<br>".$nomeFuncionario;
+	 echo "<br>".$salario;
+	 echo "<br>".$nomeFuncionario;
+	 echo "<br>".$nomeFuncionario;
 
 	//query para atualizar o dado
 	$query = "UPDATE tfuncionario SET
@@ -26,8 +29,7 @@
 
 	$resultado = mysql_query($query,$con) or die ("3-erro em ATUALIZAR o banco!");
 
-	echo "<br>".$resultado;
-	var_dump ($resultado);
+
 
 
 	header('Location:funcionario.php');
