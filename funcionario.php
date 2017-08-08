@@ -126,7 +126,7 @@ if(!empty($_GET['codigoAltFuncionario'])){
 							<div class="control-group">
 							  <label class="control-label" for="filme">Nome</label>
 							  <div class="controls">
-							    <input id="nomeFuncionario" name="nomeFuncionario" type="text"  value="<?php echo isset($funcionario)?$funcionario['codigoUsuario']:""; ?>" class="input-xxlarge" />
+							    <input id="nomeFuncionario" name="nomeFuncionario" type="text"  value="<?php echo isset($funcionario)?$funcionario['nomeFuncionario']:""; ?>" class="input-xxlarge" />
 
 							  </div>
 							</div>
