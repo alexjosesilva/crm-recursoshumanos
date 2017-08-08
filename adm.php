@@ -29,7 +29,7 @@ if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) 
 
   	//exibindo os dados do banco....
   	$query   = "select * from tusuario where=".$codigo;
-  //	$dados   = mysql_query($query);
+  	$dados   = mysql_query($query);
   //	$usuario = mysql_fetch_assoc($dados));
 
   	//alterar Destino
