@@ -11,7 +11,8 @@
 			$dataNascimento				 =	$_REQUEST['dataNascimento'];
 			$funcao								 =	$_REQUEST['funcao'];
 
-   echo $codigoFuncionario;
+   echo "<br>".$codigoFuncionario;
+	 echo "<br>".$nomeFuncionario;
 
 	//query para atualizar o dado
 	$query = "UPDATE tfuncionario SET nomeFuncionario='".$nomeFuncionario."', codigoFuncionario='".$codigoFuncionario."',salario='".$salario."',dataNascimento='".$dataNascimento."',funcao='".$funcao."' where codigoFuncionario='".$codigoFuncionario."'";
