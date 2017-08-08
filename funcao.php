@@ -29,7 +29,7 @@ if(!empty($_GET['codigoAltFuncao'])){
   $codigo = $_GET['codigoAltFuncao'];
 
   //exibindo os dados do banco....
-  $query   = "select * from tfuncao where codigoFuncao=".$codigo;
+  $query   = "select * from tfuncoes where codigoFuncao=".$codigo;
   $dados   = mysql_query($query);
   $funcao  = mysql_fetch_assoc($dados);
 
@@ -166,7 +166,7 @@ if(!empty($_GET['codigoAltFuncao'])){
 
                         		$query = "select * from tfuncoes";
                         		$dados = mysql_query($query);
-								
+
 								while($linha = mysql_fetch_assoc($dados)){
                         	?>
 	                        	<tr>
