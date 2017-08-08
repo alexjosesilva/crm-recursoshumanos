@@ -23,7 +23,7 @@ if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) 
 	include 'conexao.php';
 
   //se recebemos uma variavel pelo metodo Get, faça o seguinte
-  if(isset($_GET['codigoAltusuario'])){
+  if(!isset($_GET['codigoAltusuario'])){
   	$codigo = $_GET['codigoAltusuario'];
 
   	//Obter o filme
