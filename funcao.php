@@ -172,7 +172,7 @@ if(!empty($_GET['codigoAltFuncao'])){
 								while($linha = mysql_fetch_assoc($dados)){
                         	?>
 	                        	<tr>
-	                        		<td class="col-md-1"><a class="btn btn-default" href="funcao.php?codigoAltFuncao=<?$linha['codigoFuncao']?>" role="button">Alterar</a></td>
+	                        		<td class="col-md-1"><a class="btn btn-default" href="funcao.php?codigoAltFuncao=<?=$linha['codigoFuncao']?>" role="button">Alterar</a></td>
 	                        		<td class="col-md-6"><?php echo $linha['descricaoFuncao']; ?></td>
 
 
