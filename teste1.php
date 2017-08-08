@@ -13,8 +13,9 @@
 		var_dump($usuario);
 
 		echo "<br>";
-
 		echo isset($usuario)?$usuario['nomeUsuario']:"";
+		echo "<br>";
+		echo isset($usuario)?$usuario['codigoUsuario']:"";
 
 	}
 
