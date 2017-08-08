@@ -24,13 +24,13 @@ if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) 
 
 
   //se recebemos uma variavel pelo metodo Get, faça o seguinte
-  if(isset($_GET['codigoAltusuario'])){
+  if(!empty($_GET['codigoAltusuario'])){
   	$codigo = $_GET['codigoAltusuario'];
 
   	//exibindo os dados do banco....
   	$query   = "select * from tusuario where=".$codigo;
   	$dados   = mysql_query($query);
-  //	$usuario = mysql_fetch_assoc($dados));
+  	$usuario = mysql_fetch_assoc($dados));
 
   	//alterar Destino
   	$destino = "alterar_usuario.php";
