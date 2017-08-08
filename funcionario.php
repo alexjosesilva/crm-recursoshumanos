@@ -141,7 +141,8 @@ if(!empty($_GET['codigoAltFuncionario'])){
 							  		<?php
                         	  $query = "select * from tfuncoes";
                       			$dados = mysql_query($query);
-
+                            echo $funcionario['funcao']; 
+                            //exibir select
 										        while($linha = mysql_fetch_assoc($dados)){
 	                        			echo "<option value='".$linha['codigoFuncao']."'>".$linha['descricaoFuncao']."</option>";
                       		  }
