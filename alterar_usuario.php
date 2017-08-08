@@ -10,10 +10,7 @@
 	$codigoUsuario	 	=	$_REQUEST['codigoUsuario'];
 	$senhaUsuario	 		=	$_REQUEST['senhaUsuario'];
 
-  echo "nomeUsuario:   ".$nomeUsuario."<br>";
-	echo "codigoUsuario: ".$codigoUsuario."<br>";
-	echo "senhaUsuario:  ".$senhaUsuario."<br>";
-
+  
 	//query para atualizar o dado
 	$query = "UPDATE tusuario SET nomeUsuario='".$nomeUsuario."', codigoUsuario='".$codigoUsuario."', senhaUsuario='".$senhaUsuario."' where codigoUsuario='".$codigoUsuario."'";
 	$resultado = mysql_query($query,$con) or die ("2-erro em ATUALIZAR o banco!");
