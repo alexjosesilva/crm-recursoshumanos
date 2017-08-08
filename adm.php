@@ -20,12 +20,6 @@ if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) 
 }
 	//acesso ao banco e tabelas do sistema
 	include 'conexao.php';
-
-
-
-
-
-
 ?>
 
 
@@ -94,8 +88,7 @@ if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) 
                             <div class="control-group">
                               <label class="control-label" for="nomeUsuario">Matricula Usuario</label>
                               <div class="controls">
-                                <input id="codigoUsuario" name="codigoUsuario" type="text" value="<?php echo isset($usuario)?$usuario['nome']:""; ?>
-                                 placeholder=" Nome Usuario" autocomplete="off" />
+                                <input id="codigoUsuario" name="codigoUsuario" type="text" value="<?php echo isset($usuario)?$usuario['nome']:'';?>" placeholder=" Nome Usuario" autocomplete="off" />
 
                               </div>
                             </div>
