@@ -98,7 +98,7 @@ if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) 
 							<div class="control-group">
 							  <label class="control-label" for="nomeUsuario">Nome Usuario</label>
 							  <div class="controls">
-							    <input id="nomeUsuario" name="nomeUsuario" type="text" placeholder=" Nome Usuario" autocomplete="off" />
+							    <input id="nomeUsuario" name="nomeUsuario" type="text" value="<?php echo isset($usuario)?$usuario['nomeUsuario']:""; ?>"  placeholder=" Nome Usuario" autocomplete="off" />
 
 							  </div>
 							</div>
