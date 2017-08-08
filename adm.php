@@ -28,9 +28,9 @@ if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) 
   	$codigo = $_GET['codigoAltusuario'];
 
   	//exibindo os dados do banco....
-  	$query   = "select * from tusuario where=".$codigo;
+  	$query   = "select * from tusuario where codigoUsuario=".$codigo;
   	$dados   = mysql_query($query);
-  	//$usuario = mysql_fetch_assoc($dados));
+  	$usuario = mysql_fetch_assoc($dados));
 
   	//alterar Destino
   	$destino = "alterar_usuario.php";
