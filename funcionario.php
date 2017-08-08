@@ -215,7 +215,7 @@ if(!empty($_GET['codigoAltFuncionario'])){
 								while($linha = mysql_fetch_assoc($dados)){
                         	?>
 	                        	<tr>
-	                        		<td class="col-md-1"><a class="btn btn-default" href="funcionario.php?codigoAltFuncionario="<?=$linha['codigoFuncionario'];?> role="button">Alterar</a></td>
+	                        		<td class="col-md-1"><a class="btn btn-default" href="funcionario.php?codigoAltFuncionario=".<?=$linha['codigoFuncionario'];?> role="button">Alterar</a></td>
 	                        		<td class="col-md-6"><?php echo $linha['nomeFuncionario']; ?></td>
 	                        		<td class="col-md-1"></td>
 	                        		<td class="col-md-1"><a class="btn btn-danger" href="<?php echo "excluir_funcionario.php?codigo=".$linha['codigoFuncionario']; ?>" role="button">Excluir</a></td>
