@@ -2,7 +2,7 @@
 Sistema em PHP para gerenciar recursos humanos de uma empresa ficticia
 
 *************************************************************************************************
-*								Manual do Sistema RH 1.5								*
+Manual do Sistema RH 1.5
 *************************************************************************************************
 
 Introdução
