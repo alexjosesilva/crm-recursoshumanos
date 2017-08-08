@@ -2,6 +2,11 @@
 //inicia sessão
 session_start();
 
+
+	//Variavel de destino para o formulario
+	$destino = "inserir_cliente.php";
+	$tituloformulario = "Incluir Cliente";
+
 //Caso o usuário não esteja autenticado, limpa os dados e redireciona
 if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) {
     //Destrói
@@ -74,11 +79,11 @@ if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) 
                         <div class="col-sm-5" id="featured">
                           <div class="page-header text-muted">Usuario: <?php echo $_SESSION['usuarioLogado'];  ?></div>
 
-                          <form class="form-horizontal" action="inserir_usuario.php" method="post">
+                          <form class="form-horizontal" action="<?=$destino; ?>" method="post">
 							<fieldset>
 
 							<!-- Form Name -->
-							<legend>Incluir Usuario</legend>
+							<legend> <?php echo $tituloformulario; ?> </legend>
 
 							<!-- Text input-->
                             <div class="control-group">
