@@ -1,18 +1,39 @@
 <?php
-//inicia sessão  
+//inicia sessão
 session_start();
- 
+
+//Variavel de destino para o formulario
+$destino = "inserir_usuario.php";
+
 //Caso o usuário não esteja autenticado, limpa os dados e redireciona
 if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) {
     //Destrói
     session_destroy();
- 
+
     //Limpa
     unset ($_SESSION['codigoUsuario']);
     unset ($_SESSION['senhaUsuario']);
-     
+
+    //se recebemos uma variavel pelo metodo Get, faça o seguinte
+	if(isset($_GET['codigoUsuario'])){
+		$codigo = $_GET['codigoUsuario'];
+
+		//Obter
+    $query = "select * from tusuario where codigoUsuario =".$codigo;
+    $dados = mysql_query($query);
+		$usuario = mysql_fetch_assoc($dados);
+
+		//alterar Destino
+		$destino = "alterar_usuario.php";
+
+		//ocultar o campo
+		$oculto = '<input type="hidden" name="codigo" value="'.$codigo.'"/>';
+	}
+
+
+
     //Redireciona para a página de autenticação
-    header('location:index.php');	
+    header('location:adm.php');
 }
 	//acesso ao banco e tabelas do sistema
 	include 'conexao.php';
@@ -36,13 +57,13 @@ if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) 
 <div class="wrapper">
     <div class="box">
         <div class="row">
-        	
-        	
+
+
             <!-- sidebar -->
             <div class="column col-sm-3" id="sidebar">
-                
+
                 <img src="images/icone_rh.png"  width="150px" height="150px" > <a class="logo" href="#"><span>Gestão 3LM</span></a>
-                
+
                 <ul class="nav">
                     <li class="active">
                     	<a href="adm.php">Usuarios</a>
@@ -64,28 +85,29 @@ if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) 
                 </ul>
             </div>
             <!-- /sidebar -->
-          
+
             <!-- main -->
             <div class="column col-sm-9" id="main">
                 <div class="padding">
                     <div class="full col-sm-9">
-                      
+
                         <!-- content -->
-                        <div class="col-sm-5" id="featured">   
+                        <div class="col-sm-5" id="featured">
                           <div class="page-header text-muted">Usuario: <?php echo $_SESSION['usuarioLogado'];  ?></div>
-                          
-                          <form class="form-horizontal" action="inserir_usuario.php" method="post"> 
+
+                          <form class="form-horizontal" action="<?=$destino; ?>" method="post">
 							<fieldset>
-							
+
 							<!-- Form Name -->
 							<legend>Incluir Usuario</legend>
-							
+
 							<!-- Text input-->
                             <div class="control-group">
                               <label class="control-label" for="nomeUsuario">Matricula Usuario</label>
                               <div class="controls">
-                                <input id="codigoUsuario" name="codigoUsuario" type="text" placeholder=" Nome Usuario" autocomplete="off" />
-                                
+                                <input id="codigoUsuario" name="codigoUsuario" type="text" value="<?php  echo isset($usuario)?$usuario['nome']:"";
+                                 placeholder=" Nome Usuario" autocomplete="off" />
+
                               </div>
                             </div>
 
@@ -93,21 +115,21 @@ if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) 
 							<div class="control-group">
 							  <label class="control-label" for="nomeUsuario">Nome Usuario</label>
 							  <div class="controls">
-							    <input id="nomeUsuario" name="nomeUsuario" type="text" placeholder=" Nome Usuario" autocomplete="off" />
-							    
+							    <input id="nomeUsuario" name="nomeUsuario" type="text" placeholder=" Nome Usuario" autocomplete="off" value="<? echo ?>"/>
+
 							  </div>
 							</div>
-							
-												
+
+
 							<!-- Text input-->
 							<div class="control-group">
 							  <label class="control-label" for="senhaUsuario">Senha Usuario</label>
 							  <div class="controls">
 							    <input id="senhaUsuario" name="senhaUsuario" type="password" placeholder="senha do Usuario" class="input-xxlarge" autocomplete="off">
-							    
+
 							  </div>
 							</div>
-							
+
 							<!-- Button -->
 							<div class="control-group">
 							  <label class="control-label" for=""></label>
@@ -115,20 +137,20 @@ if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) 
 							    <input type="submit" class="btn btn-inverse" value="Enviar" />
 							  </div>
 							</div>
-							
+
 							</fieldset>
 							</form>
                         </div>
-                        
+
                         <!--/top story-->
 
-                        
-                        <div class="col-sm-12" id="stories">  
+
+                        <div class="col-sm-12" id="stories">
                           <div class="page-header text-muted divider">
                             Usuários Cadastrados
                           </div>
                         </div>
-                        
+
                         <table class="table table-hover">
                         	<tr>
                         		<th></th>
@@ -136,43 +158,43 @@ if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) 
                         		<th></th>
                         		<th></th>
                         	</tr>
-                        	
+
                         	<!--Lista filmes no banco -->
-                        	
+
                         	<?php
                         		//exibindo os dados do banco....
                         		$query = "select * from tusuario";
                         		$dados = mysql_query($query);
-								
+
 								while($linha = mysql_fetch_assoc($dados)){
                         	?>
 	                        	<tr>
 	                        		<td class="col-md-1">
                                         <a class="btn btn-default" href="alterar_usuario.php?codigoUsuario=<?=$linha['codigoUsuario']; ?>" role="button">Alterar</a>
                                     </td>
-	                        		
+
                                     <td class="col-md-6"><?php echo $linha['nomeUsuario'];  ?></td>
-	                        	   
+
                                     <td class="col-md-1">
-                                      
+
                                     </td>
 
 
 	                        		<td class="col-md-1"><a class="btn btn-danger" href="<?php echo "excluir_usuario.php?codigoUsuario=".$linha['codigoUsuario']; ?>" role="button">Excluir</a></td>
 	                        	</tr>
-                        	<?php 
+                        	<?php
 								}
                         	?>
-                        	
+
 						</table>
-                      
+
                         <hr>
-                        	<a class="btn btn-info" href="<?php echo "imprimir_usuario.php?opcao=1"; ?>" role="button">Imprimir Relatorio Todos os Usuario</a>  
+                        	<a class="btn btn-info" href="<?php echo "imprimir_usuario.php?opcao=1"; ?>" role="button">Imprimir Relatorio Todos os Usuario</a>
                         <hr>
-                      
-                        <div class="row" id="footer">    
+
+                        <div class="row" id="footer">
                           <div class="col-sm-6">
-                            
+
                           </div>
                           <div class="col-sm-6">
                             <p>
@@ -180,23 +202,23 @@ if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) 
                             </p>
                           </div>
                         </div>
-                      
+
                       <hr>
-                      
+
                       <h3 class="text-center">
                         <a href="#" target="ext">3LM Gestão</a>
                       </h3>
-                        
+
                       <hr>
-                        
-                      
+
+
                     </div><!-- /col-9 -->
                 </div><!-- /padding -->
             </div>
             <!-- /main -->
-          
-          
-          
+
+
+
         </div>
     </div>
 </div>
