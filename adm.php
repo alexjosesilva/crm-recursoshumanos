@@ -100,19 +100,19 @@ if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) 
                           <div class="page-header text-muted">Usuario: <?php echo $_SESSION['usuarioLogado'];  ?></div>
 
                           <form class="form-horizontal" action="<?=$destino; ?>" method="post">
-							<fieldset>
+							                     <fieldset>
 
-							<!-- Form Name -->
-							<legend> <?php echo $tituloformulario; ?> </legend>
+                      							<!-- Form Name -->
+                      							<legend> <?php echo $tituloformulario; ?> </legend>
 
-							<!-- Text input-->
-                            <div class="control-group">
-                              <label class="control-label" for="nomeUsuario">Matricula Usuario</label>
-                              <div class="controls">
-                                <input id="codigoUsuario" name="codigoUsuario" type="text" value="<?php echo isset($usuario)?$usuario['codigoUsuario']:""; ?>" autocomplete="off" />
+                      							<!-- Text input-->
+                                      <div class="control-group">
+                                        <label class="control-label" for="nomeUsuario">Matricula Usuario</label>
+                                        <div class="controls">
+                                          <input id="codigoUsuario" name="codigoUsuario" type="text" value="<?php echo isset($usuario)?$usuario['codigoUsuario']:""; ?>" autocomplete="off" />
 
-                              </div>
-                            </div>
+                                        </div>
+                                      </div>
 
                             <!-- Text input-->
 							<div class="control-group">
