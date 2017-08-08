@@ -4,8 +4,8 @@ session_start();
 
 
 	//Variavel de destino para o formulario
-	$destino = "inserir_cliente.php";
-	$tituloformulario = "Alterar Cliente";
+	$destino = "inserir_usuario.php";
+	$tituloformulario = "Incluir Cliente";
 
 //Caso o usuário não esteja autenticado, limpa os dados e redireciona
 if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) {
