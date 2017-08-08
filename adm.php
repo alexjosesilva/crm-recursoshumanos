@@ -26,7 +26,8 @@ if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) 
   //se recebemos uma variavel pelo metodo Get, faça o seguinte
   if(!empty($_GET['codigoAltUsuario'])){
   	$codigo = $_GET['codigoAltUsuario'];
-    echo "teset: ".$codigo;
+
+    echo "teste: ".$codigo;
   	//exibindo os dados do banco....
   	$query   = "select * from tusuario where codigoUsuario=".$codigo;
   	$dados   = mysql_query($query);
