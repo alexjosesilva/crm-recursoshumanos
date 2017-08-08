@@ -26,12 +26,7 @@ if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) 
   if(!isset($_GET['codigoAltusuario'])){
   	$codigo = $_GET['codigoAltusuario'];
 
-  	//Obter o filme
-
-  	//exibindo os dados do banco....
-  	$query   = "select * from tusuario where=".$codigo;
-  	$dados   = mysql_query($query);
-  	$usuario = mysql_fetch_assoc($dados));
+  	
 
 
   	//alterar Destino
