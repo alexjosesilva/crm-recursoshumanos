@@ -4,6 +4,7 @@ session_start();
 
 //Variavel de destino para o formulario
 $destino = "inserir_usuario.php";
+$tituloformulario = "Incluir Usuario";
 
 //Caso o usuário não esteja autenticado, limpa os dados e redireciona
 if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) {
@@ -25,6 +26,7 @@ if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) 
 
 		//alterar Destino
 		$destino = "alterar_usuario.php";
+    $tituloformulario = "Alterar Usuario";
 
 		//ocultar o campo
 		$oculto = '<input type="hidden" name="codigo" value="'.$codigo.'"/>';
@@ -99,7 +101,7 @@ if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) 
 							<fieldset>
 
 							<!-- Form Name -->
-							<legend>Incluir Usuario</legend>
+							<legend><? echo $tituloformulario; ?></legend>
 
 							<!-- Text input-->
                             <div class="control-group">
