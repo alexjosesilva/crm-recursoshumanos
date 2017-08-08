@@ -26,6 +26,7 @@
 
 	$resultado = mysql_query($query,$con) or die ("3-erro em ATUALIZAR o banco!");
 
+	echo "<br>".$resultado;
 	var_dump ($resultado);
 
 
