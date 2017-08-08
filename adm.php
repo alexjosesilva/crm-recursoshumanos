@@ -128,7 +128,7 @@ if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) 
 							<div class="control-group">
 							  <label class="control-label" for="senhaUsuario">Senha Usuario</label>
 							  <div class="controls">
-							    <input id="senhaUsuario" name="senhaUsuario" type="password" value="<?php echo isset($usuario)?$usuario['senhaUsuario']:""; ?>" class="input-xxlarge" autocomplete="off">
+							    <input id="senhaUsuario" name="senhaUsuario" type="password" value="<?php echo isset($usuario)?$usuario['senhaUsuario']:""; ?>" autocomplete="off">
 
 							  </div>
 							</div>
