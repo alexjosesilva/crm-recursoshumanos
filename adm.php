@@ -21,6 +21,29 @@ if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) 
 }
 	//acesso ao banco e tabelas do sistema
 	include 'conexao.php';
+
+  //se recebemos uma variavel pelo metodo Get, faça o seguinte
+  if(isset($_GET['codigoAltusuario'])){
+  	$codigo = $_GET['codigoAltusuario'];
+
+  	//Obter o filme
+
+  	//exibindo os dados do banco....
+  	$query   = "select * from tusuario where=".$codigo;
+  	$dados   = mysql_query($query);
+  	$usuario = mysql_fetch_assoc($dados));
+
+
+  	//alterar Destino
+  	$destino = "alterar_usuario.php";
+  	$tituloformulario = "Alterar Usuario";
+
+  	//ocultar o campo
+  	$oculto = '<input type="hidden" name="codigo" value="'.$codigo.'"/>';
+  }
+
+
+
 ?>
 
 
