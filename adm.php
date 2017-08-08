@@ -24,7 +24,7 @@ if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) 
 
 
   //se recebemos uma variavel pelo metodo Get, faça o seguinte
-  if(empty($_GET['codigoAltUsuario'])){
+  if(!empty($_GET['codigoAltUsuario'])){
   	$codigo = $_GET['codigoAltUsuario'];
     echo "teset: ".$codigo;
   	//exibindo os dados do banco....
@@ -40,7 +40,7 @@ if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) 
 
   	//ocultar o campo
   	$oculto = '<input type="hidden" name="codigo" value="'.$codigo.'"/>';
-    
+
   }
 
 
