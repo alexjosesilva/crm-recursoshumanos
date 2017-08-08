@@ -153,7 +153,7 @@ if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) 
                         	?>
 	                        	<tr>
 	                        		<td class="col-md-1">
-                                        <a class="btn btn-default" href="alterar_usuario.php?codigoUsuario=<?=$linha['codigoUsuario']; ?>" role="button">Alterar</a>
+                                        <a class="btn btn-default" href="adm.php?codigoAltUsuario=<?=$linha['codigoUsuario']; ?>" role="button">Alterar</a>
                                     </td>
 
                                     <td class="col-md-6"><?php echo $linha['nomeUsuario'];  ?></td>
