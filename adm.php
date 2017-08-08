@@ -16,8 +16,9 @@ if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) 
     unset ($_SESSION['senhaUsuario']);
 
     //se recebemos uma variavel pelo metodo Get, faça o seguinte
-	if(isset($_GET['codigoUsuario'])){
-		$codigo = $_GET['codigoUsuario'];
+	if(isset($_GET['codigoAltUsuario'])){
+
+  	$codigo = $_GET['codigoAltUsuario'];
 
 		//Obter
     $query = "select * from tusuario where codigoUsuario =".$codigo;
@@ -107,7 +108,7 @@ if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) 
                             <div class="control-group">
                               <label class="control-label" for="nomeUsuario">Matricula Usuario</label>
                               <div class="controls">
-                                <input id="codigoUsuario" name="codigoUsuario" type="text" value="<?php  echo isset($usuario)?$usuario['nome']:"";
+                                <input id="codigoUsuario" name="codigoUsuario" type="text" value="<?php echo isset($usuario)?$usuario['nome']:""; ?>
                                  placeholder=" Nome Usuario" autocomplete="off" />
 
                               </div>
@@ -172,7 +173,7 @@ if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) 
                         	?>
 	                        	<tr>
 	                        		<td class="col-md-1">
-                                        <a class="btn btn-default" href="alterar_usuario.php?codigoUsuario=<?=$linha['codigoUsuario']; ?>" role="button">Alterar</a>
+                                        <a class="btn btn-default" href="adm.php?codigoAltUsuario=<?=$linha['codigoUsuario']; ?>" role="button">Alterar</a>
                                     </td>
 
                                     <td class="col-md-6"><?php echo $linha['nomeUsuario'];  ?></td>
