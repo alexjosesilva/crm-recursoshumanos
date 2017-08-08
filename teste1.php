@@ -11,6 +11,9 @@
   	$usuario = mysql_affected_rows($dados));
     var_dump($usuario);
 
+		echo "<br>";
+		
+		echo isset($usuario)?$usuario['nomeUsuario']:"";
 
 	}
 
