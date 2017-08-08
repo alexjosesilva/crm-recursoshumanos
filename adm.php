@@ -2,10 +2,6 @@
 //inicia sessão
 session_start();
 
-//Variavel de destino para o formulario
-$destino = "inserir_usuario.php";
-$tituloformulario = "Incluir Usuario";
-
 //Caso o usuário não esteja autenticado, limpa os dados e redireciona
 if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) {
     //Destrói
@@ -16,7 +12,7 @@ if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) 
     unset ($_SESSION['senhaUsuario']);
 
     //Redireciona para a página de autenticação
-    header('location:adm.php');
+    header('location:index.php');
 }
 	//acesso ao banco e tabelas do sistema
 	include 'conexao.php';
@@ -78,17 +74,17 @@ if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) 
                         <div class="col-sm-5" id="featured">
                           <div class="page-header text-muted">Usuario: <?php echo $_SESSION['usuarioLogado'];  ?></div>
 
-                          <form class="form-horizontal" action="<?=$destino; ?>" method="post">
+                          <form class="form-horizontal" action="inserir_usuario.php" method="post">
 							<fieldset>
 
 							<!-- Form Name -->
-							<legend><? echo $tituloformulario; ?></legend>
+							<legend>Incluir Usuario</legend>
 
 							<!-- Text input-->
                             <div class="control-group">
                               <label class="control-label" for="nomeUsuario">Matricula Usuario</label>
                               <div class="controls">
-                                <input id="codigoUsuario" name="codigoUsuario" type="text" value="<? echo "teste"; ?>" placeholder=" Nome Usuario" autocomplete="off" />
+                                <input id="codigoUsuario" name="codigoUsuario" type="text" placeholder=" Nome Usuario" autocomplete="off" />
 
                               </div>
                             </div>
@@ -97,7 +93,7 @@ if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) 
 							<div class="control-group">
 							  <label class="control-label" for="nomeUsuario">Nome Usuario</label>
 							  <div class="controls">
-							    <input id="nomeUsuario" name="nomeUsuario" type="text" placeholder=" Nome Usuario" autocomplete="off" value="<? echo ?>"/>
+							    <input id="nomeUsuario" name="nomeUsuario" type="text" placeholder=" Nome Usuario" autocomplete="off" />
 
 							  </div>
 							</div>
@@ -152,7 +148,7 @@ if ( !isset($_SESSION['codigoUsuario']) and !isset($_SESSION['senhaUsuario']) ) 
                         	?>
 	                        	<tr>
 	                        		<td class="col-md-1">
-                                        <a class="btn btn-default" href="adm.php?codigoAltUsuario=<?=$linha['codigoUsuario']; ?>" role="button">Alterar</a>
+                                        <a class="btn btn-default" href="alterar_usuario.php?codigoUsuario=<?=$linha['codigoUsuario']; ?>" role="button">Alterar</a>
                                     </td>
 
                                     <td class="col-md-6"><?php echo $linha['nomeUsuario'];  ?></td>
