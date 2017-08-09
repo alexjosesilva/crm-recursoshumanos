@@ -62,14 +62,13 @@ if(!empty($_GET['codigoAltFuncionario'])){
 
 	  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	  <link rel="stylesheet" href="/resources/demos/style.css">
-	 
-	 
-	  <script>
-		  $( function() {
-		    $( "#dataNascimento" ).datepicker();
-		  } );
-	  </script>
 
+
+     <link   rel="stylesheet" href="/css/bootstrap-datepicker.css">
+     <script src="js/bootstrap-datepicker.js"></script>
+     <script src="js/bootstrap-datepicker.pt-BR.min.js"></script>
+
+	 
 	</head>
 		<body>
 			<div class="wrapper">
@@ -174,7 +173,19 @@ if(!empty($_GET['codigoAltFuncionario'])){
 							<!-- Text input-->
 							<div >
 							  <label  for="dataNascimento">Data de nascimento</label>
-							   <p> <input id="dataNascimento" name="dataNascimento" type="text" value="<?php echo isset($funcionario)?$funcionario['dataNascimento']:""; ?>" > </p>
+							   <p> 
+
+							   	<div class="input-group date" data-provide="datepicker">
+								    <input type="text" class="form-control" id="dataNascimento" value="<?php echo isset($funcionario)?$funcionario['dataNascimento']:""; ?>" >
+								    <div class="input-group-addon">
+								        <span class="glyphicon glyphicon-th"></span>
+								    </div>
+								</div>
+
+
+
+
+
 							</div>
 
 							<!-- Button -->
@@ -274,6 +285,15 @@ if(!empty($_GET['codigoAltFuncionario'])){
 
 
 		  <!-- script references -->
+		  <script type="text/javascript">
+		  	
+				$('#dataNascimento').datepicker({
+				    format: 'dd/mm/yyyy'
+				});
+
+		  </script>
+
+
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 
