@@ -37,3 +37,7 @@ Partes a ser desenvolvido:
 		<li>Em pdf</li>
 	</ol>
 **************************************************************************************************
+<div>
+<img src="sistemaRh.png" width="350"/>
+<img src="sistemaRh2.png" width="350"/>
+</div>
