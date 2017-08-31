@@ -30,12 +30,14 @@ Partes a ser desenvolvido:
 <span>Validar Campos com javascript </span>
 <ol>
   <li>telefone,cpf,email e telefone</li>
+  <li>calendario: DatePicker</li>
 </ol>
 
 <span> Gerar Relatorios: Melhoramento</span>
-	<ol>
-		<li>Em pdf</li>
-	</ol>
+	<ol><li>Em pdf</li></ol>
+	<ol><li>Folha de Pagamento</li></ol>
+	<ol><li>Historico do funcionario</li></ol>
+	<ol><li>Auditoria</li></ol>
 **************************************************************************************************
 <div>
 <img src="sistemaRh.png" width="350"/>
